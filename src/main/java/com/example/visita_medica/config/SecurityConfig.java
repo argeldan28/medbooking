@@ -16,11 +16,13 @@ public class SecurityConfig {
 
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    http.csrf().disable()
-        .authorizeHttpRequests()
-        .requestMatchers("/api/auth/**").permitAll() // permetti registro e login senza autenticazione
-        .anyRequest().authenticated(); // tutte le altre rotte richiedono login
-
-    return http.build();
+      http.csrf().disable()
+          .authorizeHttpRequests()
+          .requestMatchers("/api/auth/**").permitAll() // auth ok
+          .requestMatchers("/api/visits/**").permitAll()   // aggiungi queste
+          .requestMatchers("/api/users/**").permitAll()
+          .requestMatchers("/api/roles/**").permitAll()
+          .anyRequest().authenticated();
+      return http.build();
   }
 }
