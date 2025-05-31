@@ -1,5 +1,7 @@
 package com.example.visita_medica.dto;
 
+import java.util.Set;
+
 import lombok.*;
 
 @Data
@@ -10,5 +12,5 @@ public class UserDto {
     private Long id;
     private String username;
     private String email;
-    // niente password qui!
+    private Set<String> roles;
 }
