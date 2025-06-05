@@ -31,8 +31,16 @@ public class JwtUtils {
           Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
           return true;
       } catch (Exception e) {
-          // Errore
+          System.out.println("Errore: " + e);
       }
       return false;
   }
+
+    public String getUsernameFromToken(String token) {
+        return Jwts.parser()
+                .setSigningKey(jwtSecret)
+                .parseClaimsJws(token)
+                .getBody()
+                .getSubject();
+    }
 }
