@@ -18,5 +18,5 @@ public class Role {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String name; // ROLE_PATIENT, ROLE_DOCTOR
+  private String name;
 }

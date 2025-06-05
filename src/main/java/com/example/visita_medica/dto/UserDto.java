@@ -1,13 +1,11 @@
 package com.example.visita_medica.dto;
-
 import java.util.Set;
-
 import lombok.*;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDto {
     private Long id;
     private String username;
